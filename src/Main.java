@@ -1,5 +1,23 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class Main {
+
+    private static Map<Integer, Passport> map = new HashMap<>();
+
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Passport p = new Passport(12345678, "Ivan", "Ivanov", null, 1996);
+        addPassport(p);
+
+        Passport passport = getPassportByNumber(12345678);
+    }
+
+    public static void addPassport(Passport p) {
+        map.put(p.getNumber(), p);
+    }
+
+    public static Passport getPassportByNumber(int number) {
+        return map.get(number);
+
     }
 }
